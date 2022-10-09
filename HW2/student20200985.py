@@ -24,15 +24,15 @@ grade = ""
 for row in ws:
 	if row_id != 1:
 		score = ws.cell(row = row_id, column = 7).value
-		if int(count*0.15)-1 >= 0 and score >= scores[int(count*0.15)-1]:
+		if score > scores[int(count*0.15)]:
 			grade = "A+"
-		elif int(count*0.3)-1 >= 0 and score >= scores[int(count*0.3)-1]:
+		elif score > scores[int(count*0.3)]:
 			grade = "A"
-		elif int(count*0.5)-1 >= 0 and score >= scores[int(count*0.5)-1]:
+		elif score > scores[int(count*0.5)]:
 			grade = "B+"
-		elif int(count*0.7)-1 >= 0 and score >= scores[int(count*0.7)-1]:
+		elif score > scores[int(count*0.7)]:
 			grade = "B"
-		elif int(count*0.85)-1 >= 0 and score >= scores[int(count*0.85)-1]:
+		elif score > scores[int(count*0.85)]:
 			grade = "C+"
 		else:
 			grade = "C"
