@@ -20,19 +20,33 @@ scores.sort(reverse=True)
 
 count = row_id - 2
 row_id = 1
-grade = ""
+cntA = 0
+cntB = 0
+cntC = 0
 for row in ws:
 	if row_id != 1:
 		score = ws.cell(row = row_id, column = 7).value
-		if score > scores[int(count*0.15)]:
-			grade = "A+"
-		elif score > scores[int(count*0.3)]:
-			grade = "A"
-		elif score > scores[int(count*0.5)]:
-			grade = "B+"
+		if score > scores[int(count*0.3)]:
+			cntA += 1
 		elif score > scores[int(count*0.7)]:
+			cntB += 1
+		else:
+			cntC += 1
+	row_id += 1
+
+row_id = 1
+for row in ws:
+	if row_id != 1:
+		score = ws.cell(row = row_id, column = 7).value
+		if score > scores[int(cntA/2)]:
+			grade = "A+"
+		elif score > scores[cntA]:
+			grade = "A"
+		elif score > scores[cntA+int(cntB/2)]:
+			grade = "B+"
+		elif score > scores[cntA+cntB]:
 			grade = "B"
-		elif score > scores[int(count*0.85)]:
+		elif score > scores[cntA+cntB+int(cntC/2)]:
 			grade = "C+"
 		else:
 			grade = "C"
