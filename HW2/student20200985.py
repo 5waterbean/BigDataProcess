@@ -42,15 +42,15 @@ for row in ws:
 		if score > scores[int(cntA/2)]:
 			grade = "A+"
 		elif score > scores[cntA]:
-			grade = "A"
+			grade = "A0"
 		elif score > scores[cntA+int(cntB/2)]:
 			grade = "B+"
 		elif score > scores[cntA+cntB]:
-			grade = "B"
+			grade = "B0"
 		elif score > scores[cntA+cntB+int(cntC/2)]:
 			grade = "C+"
 		else:
-			grade = "C"
+			grade = "C0"
 		ws.cell(row = row_id, column = 8).value = grade
 	row_id += 1
 
