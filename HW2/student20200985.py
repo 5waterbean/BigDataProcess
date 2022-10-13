@@ -34,6 +34,7 @@ for row in ws:
 			cntC += 1
 	row_id += 1
 
+grade = ""
 row_id = 1
 for row in ws:
 	if row_id != 1:
