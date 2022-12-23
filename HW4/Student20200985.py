@@ -13,10 +13,10 @@ def createDataSet(foldername):
 		fp = open(filepath)
 		for line in fp:
 			line = fp.readlines()
-			line = [l[:-1] for l in line]
-			line = ''.join(line)
-			line = [float(l) for l in line]
-			returnMat.append(line)
+		line = [l[:-1] for l in line]
+		line = ''.join(line)
+		line = [float(l) for l in line]
+		returnMat.append(line)
 	returnMat = np.array(returnMat)
 	return returnMat, classLabelVector
 
