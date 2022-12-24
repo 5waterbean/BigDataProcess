@@ -10,8 +10,7 @@ def createDataSet(foldername):
 	for filename in fileList:
 		classLabelVector.append(filename.split('_')[0])
 		filepath = foldername + '/' + filename
-		fp = open(filepath)
-		for line in fp:
+		with open(filepath, 'r', encoding = 'UTF8') as fp:
 			line = fp.readlines()
 		line = [l[:-1] for l in line]
 		line = ''.join(line)
