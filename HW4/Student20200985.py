@@ -12,9 +12,9 @@ def createDataSet(foldername):
 		filepath = foldername + '/' + filename
 		with open(filepath, 'r', encoding = 'UTF8') as fp:
 			line = fp.readlines()
-		line = [l[:-1] for l in line]
-		line = ''.join(line)
-		line = [float(l) for l in line]
+			line = [l[:-1] for l in line]
+			line = ''.join(line)
+			line = [float(l) for l in line]
 		returnMat.append(line)
 	returnMat = np.array(returnMat)
 	return returnMat, classLabelVector
